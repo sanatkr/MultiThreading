@@ -58,20 +58,31 @@ public class EvenOdd {
 		Display d = new Display();
 		
 		
-		Thread evenThread = new Thread(new Runnable()
-				{
-					
-					public void run() 
-					{
-						
-						try {
-							d.printEven();
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-				},"evenThread");
+//		Thread evenThread = new Thread(new Runnable()
+//				{
+//					
+//					public void run() 
+//					{
+//						
+//						try {
+//							d.printEven();
+//						} catch (Exception e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					}
+//				},"evenThread");
+		
+		Thread evenThread = new Thread(()-> 
+		{
+			
+			try {
+				d.printEven();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		},"evenThread");
 		
 		
 		Thread oddThread = new Thread(new Runnable()
